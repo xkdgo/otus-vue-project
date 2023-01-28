@@ -2,10 +2,10 @@
 export default {
   data() {
     return {
-      message: 'Hello OTUS!'
-    }
-  }
-}
+      message: "Hello OTUS!",
+    };
+  },
+};
 </script>
 
 <template>
