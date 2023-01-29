@@ -8,7 +8,7 @@
         @input="$emit('set-is-completed', !props.todo.isCompleted)"
       />
       <label>{{ props.todo.text }}</label>
-      <button class="destroy"></button>
+      <button class="destroy" @click="$emit('delete-todo', props.todo.id)"></button>
     </div>
     <input class="edit" type="text" />
   </li>

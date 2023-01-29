@@ -8,6 +8,7 @@
         :key="todo.id"
         :todo="todo"
         @set-is-completed="isCompleted(todo.id, $event)"
+        @delete-todo="$emit('delete-todo', $event)"
       ></todo-item>
     </ul>
   </section>
@@ -16,7 +17,7 @@
 import TodoItem from "@/components/Todo/TodoItem.vue";
 
 const props = defineProps(["todos"]);
-const emit = defineEmits(["set-is-completed"]);
+const emit = defineEmits(["set-is-completed", "delete-todo"]);
 function isCompleted(id, val) {
   emit("set-is-completed", {
     id: id,

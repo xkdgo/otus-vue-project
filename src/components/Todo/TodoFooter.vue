@@ -1,8 +1,6 @@
 <template>
   <footer class="footer">
-    <span class="todo-count">
-      <strong>{{ counter }}</strong> left
-    </span>
+    <span class="todo-count"> {{ props.count }} left </span>
     <ul class="filters">
       <li>
         <a class="selected" href="#/all">All</a>
@@ -22,7 +20,7 @@
 <script setup>
 import { ref } from "vue";
 
-const counter = ref(10);
+const props = defineProps(["count"]);
 </script>
 <style scoped>
 .filters li {
@@ -41,7 +39,7 @@ const counter = ref(10);
 
 .filters li a:hover,
 .filters li .clear-completed:hover {
-  border-color: rgba(175, 47, 47, 1);
+  border-color: rgba(173, 170, 170, 1);
   text-decoration: none;
 }
 
